@@ -85,9 +85,6 @@ public class StudentController
     {
         List<StudentModel> students = studentDAO.selectAllStudents ();
         model.addAttribute ("students", students);
-        model.addAttribute("Kuliah yang diambil");
-        model.addAttribute("Cum Laude!");
-        model.addAttribute("Sangat Memuaskan!");
 
         return "viewall";
     }
@@ -112,8 +109,8 @@ public class StudentController
     		model.addAttribute("npm", npm);
     		return "not-found";
     	}
+    	model.addAttribute("student", student);
         studentDAO.deleteStudent(npm);
-
         return "delete";
     }
     

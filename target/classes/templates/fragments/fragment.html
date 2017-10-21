@@ -42,11 +42,11 @@
                 <center th:case="'/student/viewall'">Daftar Mahasiswa</center>
                 <center th:case="'/student/add'">Menambah Mahasiswa</center>
             </div>
-            <center th:if="${#httpServletRequest.requestURI.contains('/student/update')}">Memperbarui Data Mahasiswa</center>
-            <center th:if="${#httpServletRequest.requestURI.contains('/student/view?')}">Detail Mahasiswa</center>
-            <center th:if="${#httpServletRequest.requestURI.contains('/student/delete')}">Menghapus Mahasiswa</center>
+            <center th:if="${#httpServletRequest.requestURI.contains('/student/update')}" th:text="'Memperbarui Data Mahasiswa NPM ' + ${student.npm}">Memperbarui Data Mahasiswa</center>
+            <center th:if="${#httpServletRequest.requestURI.contains('/student/view')}" th:text="'Data Mahasiswa NPM ' + ${student.npm}">Memperbarui Data Mahasiswa</center>
+            <center th:if="${#httpServletRequest.requestURI.contains('/student/delete')}" th:text="'Menghapus Mahasiswa NPM ' + ${student.npm}">Menghapus Mahasiswa</center>
             <center th:if="${#httpServletRequest.requestURI.contains('/student/add/submit')}">Menambah Mahasiswa ini</center>
-            <center th:if="${#httpServletRequest.requestURI.contains('/course/view')}">Detail Mata Kuliah</center>
+            <center th:if="${#httpServletRequest.requestURI.contains('/course/view')}" th:text="'Detail Mata Kuliah ' + ${course.idCourse}">Detail Mata Kuliah</center>
         </div>
         <div th:fragment="footer">
             <hr/>
